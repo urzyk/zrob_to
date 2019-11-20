@@ -1,0 +1,49 @@
+{% load static %}
+
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='{% static 'css/style.css' %}'>
+    <title>Zrób to!</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="header">
+        <h1>Zrób to!</h1>
+      </div>
+      <div>
+        <ul class="menu">
+          <li><a href="/">Moja lista</a></li>
+          <li><a href="/about">O projekcie</a></li>
+          <li><a href="/authors">Autorzy</a></li>
+        </ul>
+      </div>
+      <div class="list_content">
+        <h1> Moje zadania </h1>
+        <ul class="list">
+          {% for todo_item in all_items %}
+            {% if todo_item.complete %}
+              <li class="item_uncomplited item_complited">{{ todo_item.content }}
+                <form action="/deleteTodo/{{todo_item.id}}/" method="post" id="form_delete">{% csrf_token %}
+                <button type="submit" id="delete_button"><img src="{% static "media/cross.png" %}" id="cross"></button>
+                </form>
+              </li>
+            {% else %}
+              <li class="item_uncomplited"><a href="/completeTodo/{{todo_item.id}}/">{{ todo_item.content }}</a>
+                <form action="/deleteTodo/{{todo_item.id}}/" method="post" id="form_delete">{% csrf_token %}
+                <button type="submit" id="delete_button"><img src="{% static "media/cross.png" %}" id="cross"></button>
+                </form>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+
+        <form action="/addTodo/" method="post">{% csrf_token %}
+          <input type="text" name="content" maxlength="50" size="32" autofocus autocomplete="off" placeholder="Co musisz zrobić?"/>
+          <input type="submit" value="Dodaj" class="submit_button"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
