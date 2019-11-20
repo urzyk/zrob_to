@@ -1,0 +1,154 @@
+html, body{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #E8BFB5;
+}
+
+.header h1 {
+  font-size: 60px;
+}
+
+.header{
+  height: 150px;
+  background: #BA7C6C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 0px 150px 150px;
+  box-shadow: 2px 2px 8px grey;
+}
+
+.menu{
+    margin: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    height: 120px;
+    padding: 0;
+    align-items: center;
+}
+
+.menu li {
+  background: #4EA387;
+  list-style: none;
+  width: 23%;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.list{
+  margin: 0;
+  width: 35vw;
+  padding: 0;
+  list-style: none;
+}
+
+.item_uncomplited {
+  margin: 15px;
+  background: #4EA387;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+}
+
+.item_uncomplited a {
+  text-decoration: none;
+  color: white;
+}
+
+.item_complited {
+  margin: 15px;
+  background: grey;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  text-decoration: line-through;
+}
+
+.list_content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+#form_delete{
+  display: inline;
+}
+
+#cross {
+  width: 10px;
+}
+
+#delete_button {
+  background-color: transparent;
+  border: none;
+  opacity: 0%;
+  pointer-events: none;
+  padding-top: 18px;
+}
+
+li:hover #delete_button {
+  display: inline;
+  opacity: 100%;
+  pointer-events: auto;
+  transition: opacity .5s;
+}
+
+.submit_button {
+  background-color: #4EA387;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.submit_button:hover {
+  background-color: #40856E;
+  transition: .3s;
+}
+
+.menu li:hover {
+  background-color: #40856E;
+  transition: .5s;
+  box-shadow: 1px 1px 5px grey;
+}
+
+.list li:hover {
+  background-color: grey;
+  transition: .5s;
+  box-shadow: 1px 1px 5px grey;
+}
+
+.about_content {
+  text-align: center;
+  margin: 5%;
+  margin-top: 2%;
+}
+
+.authors_content {
+  text-align: center;
+  margin: 5%;
+  margin-top: 2%;
+}
